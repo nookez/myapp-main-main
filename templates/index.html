@@ -1,0 +1,230 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}Movie NN Review{% endblock title %}
+
+{% block content %}
+
+<div class="container mx-auto p-8">
+    <!-- Movie Section -->
+    <div class="text-center mb-12">
+        <h1 class="text-5xl font-bold mb-4">Movie <span class="text-red-600">NN</span> review</h1>
+        <div class="relative w-64 mx-auto">
+            <!-- Image Container with Animation -->
+            <div id="imageContainer" class="w-64 h-96 relative overflow-hidden mx-auto">
+                <img id="movieImage" src="{% static 'images/POSTER1.png' %}" alt="Movie Poster" class="w-full h-full object-cover transition-all duration-500 ease-in-out">
+            </div>
+
+            <!-- Arrow Buttons -->
+            <div class="flex justify-between items-center mt-4">
+                <button id="prevBtn" class="relative font-bold text-[17px] cursor-pointer border-none bg-black rounded-md">
+                    <span class="block border-2 border-black rounded-md py-3 px-6 bg-gray-200 text-black transition-transform transform -translate-y-1 hover:-translate-y-[0.33rem] active:translate-y-0">←</span>
+                </button>
+                <button id="nextBtn" class="relative font-bold text-[17px] cursor-pointer border-none bg-black rounded-md">
+                    <span class="block border-2 border-black rounded-md py-3 px-6 bg-gray-200 text-black transition-transform transform -translate-y-1 hover:-translate-y-[0.33rem] active:translate-y-0">→</span>
+                </button>
+            </div>
+        </div>
+        <p class="mt-4 text-lg leading-relaxed max-w-2xl mx-auto">
+            การ์ตูนหนังสามารถส่งเสริมสุขภาพจิตและอารมณ์ได้อย่างดี...
+        </p>
+    </div>
+
+    <!-- Top pick Section -->
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-red-600 mb-4">Top pick <span class="text-white">TV shows and movies just for you</span></h2>
+        <div class="flex overflow-x-auto space-x-4 pb-4">
+            <div class="relative w-32">
+                <a href="{% url 'movie_detail' 1 %}" class="block">
+                    <img src="{% static 'images/POSTER1.png' %}" alt="Movie 1" class="w-full h-auto">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'movie_detail' 2 %}" class="block">
+                    <img src="{% static 'images/POSTER2.png' %}" alt="Movie 2" class="w-full h-auto">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'movie_detail' 3 %}" class="block">
+                    <img src="{% static 'images/POSTER3.png' %}" alt="Movie 3" class="w-full h-auto">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'movie_detail' 4 %}" class="block">
+                    <img src="{% static 'images/POSTER4.png' %}" alt="Movie 4" class="w-full h-auto">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'movie_detail' 5 %}" class="block">
+                    <img src="{% static 'images/POSTER5.png' %}" alt="Movie 5" class="w-full h-auto">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'movie_detail' 6 %}" class="block">
+                    <img src="{% static 'images/POSTER6.png' %}" alt="Movie 6" class="w-full h-auto">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Coming Soon Section -->
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-red-600 mb-4">Coming soon <span class="text-yellow-400">Trailers for upcoming releases</span></h2>
+        <div class="flex overflow-x-auto space-x-4 pb-4">
+            <div class="relative w-32">
+                <a href="{% url 'coming_soon_detail' 1 %}" class="block">
+                    <img src="{% static 'images/POSTER1.png' %}" alt="Coming Soon 1" class="w-full h-auto">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'coming_soon_detail' 2 %}" class="block">
+                    <img src="{% static 'images/POSTER2.png' %}" alt="Coming Soon 2" class="w-full h-auto">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'coming_soon_detail' 3 %}" class="block">
+                    <img src="{% static 'images/POSTER3.png' %}" alt="Coming Soon 3" class="w-full h-auto">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'coming_soon_detail' 4 %}" class="block">
+                    <img src="{% static 'images/POSTER4.png' %}" alt="Coming Soon 4" class="w-full h-auto">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'coming_soon_detail' 5 %}" class="block">
+                    <img src="{% static 'images/POSTER5.png' %}" alt="Coming Soon 5" class="w-full h-auto">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'coming_soon_detail' 6 %}" class="block">
+                    <img src="{% static 'images/POSTER6.png' %}" alt="Coming Soon 6" class="w-full h-auto">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Most Popular Celebrities Section -->
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-red-600 mb-4">Most popular celebrities</h2>
+        <div class="flex overflow-x-auto space-x-4 pb-4">
+            <div class="relative w-32">
+                <a href="{% url 'celebrity_detail' 1 %}" class="block">
+                    <img src="{% static 'images/POSTER1.png' %}" alt="Celebrity 1" class="w-full h-auto rounded-full">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'celebrity_detail' 2 %}" class="block">
+                    <img src="{% static 'images/POSTER2.png' %}" alt="Celebrity 2" class="w-full h-auto rounded-full">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'celebrity_detail' 3 %}" class="block">
+                    <img src="{% static 'images/POSTER3.png' %}" alt="Celebrity 3" class="w-full h-auto rounded-full">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'celebrity_detail' 4 %}" class="block">
+                    <img src="{% static 'images/POSTER4.png' %}" alt="Celebrity 4" class="w-full h-auto rounded-full">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'celebrity_detail' 5 %}" class="block">
+                    <img src="{% static 'images/POSTER5.png' %}" alt="Celebrity 5" class="w-full h-auto rounded-full">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'celebrity_detail' 6 %}" class="block">
+                    <img src="{% static 'images/POSTER6.png' %}" alt="Celebrity 6" class="w-full h-auto rounded-full">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top News Section -->
+    <div class="mb-8">
+        <h2 class="text-2xl font-bold text-red-600 mb-4">Top news</h2>
+        <div class="flex overflow-x-auto space-x-4 pb-4">
+            <div class="relative w-32">
+                <a href="{% url 'news_detail' 1 %}" class="block">
+                    <img src="{% static 'images/POSTER1.png' %}" alt="News 1" class="w-full h-auto">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'news_detail' 2 %}" class="block">
+                    <img src="{% static 'images/POSTER2.png' %}" alt="News 2" class="w-full h-auto">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'news_detail' 3 %}" class="block">
+                    <img src="{% static 'images/POSTER3.png' %}" alt="News 3" class="w-full h-auto">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'news_detail' 4 %}" class="block">
+                    <img src="{% static 'images/POSTER4.png' %}" alt="News 4" class="w-full h-auto">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'news_detail' 5 %}" class="block">
+                    <img src="{% static 'images/POSTER5.png' %}" alt="News 5" class="w-full h-auto">
+                </a>
+            </div>
+            <div class="relative w-32">
+                <a href="{% url 'news_detail' 6 %}" class="block">
+                    <img src="{% static 'images/POSTER6.png' %}" alt="News 6" class="w-full h-auto">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block script %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const imageContainer = document.getElementById('imageContainer');
+    const movieImage = document.getElementById('movieImage');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    let movieIndex = 0;
+
+    // Movie data
+    const movies = [
+        { id: 1, title: "Movie 1", src: "{% static 'images/POSTER1.png' %}" },
+        { id: 2, title: "Movie 2", src: "{% static 'images/POSTER2.png' %}" },
+        { id: 3, title: "Movie 3", src: "{% static 'images/POSTER3.png' %}" },
+        { id: 4, title: "Movie 4", src: "{% static 'images/POSTER4.png' %}" },
+        { id: 5, title: "Movie 5", src: "{% static 'images/POSTER5.png' %}" },
+        { id: 6, title: "Movie 6", src: "{% static 'images/POSTER6.png' %}" }
+    ];
+
+    // Display movie images in a carousel
+    function updateImage() {
+        const imagePaths = [
+            '{% static "images/POSTER1.png" %}',
+            '{% static "images/POSTER2.png" %}',
+            '{% static "images/POSTER3.png" %}',
+            '{% static "images/POSTER4.png" %}',
+            '{% static "images/POSTER5.png" %}',
+            '{% static "images/POSTER6.png" %}'
+        ];
+        movieImage.src = imagePaths[movieIndex];
+    }
+
+    // Event listeners for carousel buttons
+    prevBtn.addEventListener('click', () => {
+        movieIndex = (movieIndex > 0) ? movieIndex - 1 : imagePaths.length - 1;
+        updateImage();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        movieIndex = (movieIndex < imagePaths.length - 1) ? movieIndex + 1 : 0;
+        updateImage();
+    });
+});
+
+</script>
+{% endblock %}
