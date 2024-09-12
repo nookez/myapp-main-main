@@ -1,15 +1,10 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "media",
-  content: ['./templates/**/*.html'],
+  content: [
+    './templates/**/*.html',
+    './static/**/*.js',
+  ],
   theme: {
-    extend: {
-      fontFamily: {
-        angsana: ["Angsana New"],
-        athiti: ["Athiti"]
-      }
-    },
+    extend: {},
   },
-  plugins: [ require('@tailwindcss/aspect-ratio'),],
+  plugins: [],
 }
-
