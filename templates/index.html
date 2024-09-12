@@ -200,6 +200,29 @@ document.addEventListener('DOMContentLoaded', function () {
         { id: 5, title: "Movie 5", src: "{% static 'images/POSTER5.png' %}" },
         { id: 6, title: "Movie 6", src: "{% static 'images/POSTER6.png' %}" }
     ];
+    const comingSoonMovies = [
+        { id: 1, title: "Coming Soon 1", src: "{% static 'images/COMING_SOON1.png' %}" },
+        { id: 2, title: "Coming Soon 2", src: "{% static 'images/COMING_SOON2.png' %}" },
+        { id: 3, title: "Coming Soon 3", src: "{% static 'images/COMING_SOON3.png' %}" },
+        { id: 4, title: "Coming Soon 4", src: "{% static 'images/COMING_SOON4.png' %}" },
+        { id: 5, title: "Coming Soon 5", src: "{% static 'images/COMING_SOON5.png' %}" },
+        { id: 6, title: "Coming Soon 6", src: "{% static 'images/COMING_SOON6.png' %}" }
+    ];
+    const newsArticles = [
+        { id: 1, title: "News Article 1", src: "{% static 'images/NEWS1.png' %}" },
+        { id: 2, title: "News Article 2", src: "{% static 'images/NEWS2.png' %}" },
+        { id: 3, title: "News Article 3", src: "{% static 'images/NEWS3.png' %}" },
+        { id: 4, title: "News Article 4", src: "{% static 'images/NEWS4.png' %}" },
+        { id: 5, title: "News Article 5", src: "{% static 'images/NEWS5.png' %}" },
+        { id: 6, title: "News Article 6", src: "{% static 'images/NEWS6.png' %}" }
+    ];const celebrities = [
+    { id: 1, name: "Celebrity 1", src: "{% static 'images/CELEB1.png' %}" },
+        { id: 2, name: "Celebrity 2", src: "{% static 'images/CELEB2.png' %}" },
+        { id: 3, name: "Celebrity 3", src: "{% static 'images/CELEB3.png' %}" },
+        { id: 4, name: "Celebrity 4", src: "{% static 'images/CELEB4.png' %}" },
+        { id: 5, name: "Celebrity 5", src: "{% static 'images/CELEB5.png' %}" },
+        { id: 6, name: "Celebrity 6", src: "{% static 'images/CELEB6.png' %}" }
+    ];
 
     // Display movie images in a carousel
     function updateImage() {
@@ -224,6 +247,25 @@ document.addEventListener('DOMContentLoaded', function () {
         movieIndex = (movieIndex < imagePaths.length - 1) ? movieIndex + 1 : 0;
         updateImage();
     });
+});
+// แสดง Movies
+movies.forEach(movie => {
+    console.log(`${movie.title} - ${movie.src}`);
+});
+
+// แสดง Coming Soon
+comingSoonMovies.forEach(item => {
+    console.log(`${item.title} - ${item.src}`);
+});
+
+// แสดง News Articles
+newsArticles.forEach(article => {
+    console.log(`${article.title} - ${article.src}`);
+});
+
+// แสดง Celebrities
+celebrities.forEach(celebrity => {
+    console.log(`${celebrity.name} - ${celebrity.src}`);
 });
 
 </script>

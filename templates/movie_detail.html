@@ -1,10 +1,14 @@
 {% extends '_base.html' %}
 
-{% block title %}Movie {{ movie_id }} Detail{% endblock %}
+{% block title %}Movie {{ movie.title }} Detail{% endblock %}
 
 {% block content %}
 <div class="container mx-auto p-8">
-    <h1 class="text-3xl font-bold">Movie {{ movie_id }} Detail</h1>
-    <p>Details about Movie {{ movie_id }}...</p>
+    <div class="movie-detail">
+        <!-- แสดงโปสเตอร์หนัง -->
+        <img src="{{ movie.src }}" alt="{{ movie.title }}" class="w-full h-96 object-cover mb-4">
+        <h1 class="text-4xl font-bold">{{ movie.title }}</h1>
+        <!-- สามารถเพิ่มรายละเอียดอื่นๆ ได้ เช่น ปีที่ฉายหรือคำอธิบาย -->
+    </div>
 </div>
 {% endblock %}
